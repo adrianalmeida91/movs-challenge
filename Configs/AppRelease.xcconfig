@@ -1,0 +1,7 @@
+INFOPLIST_FILE = MovsChallenge/Info.plist
+INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen
+INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen
+PRODUCT_BUNDLE_IDENTIFIER = ${BUNDLE_ID}
+PRODUCT_NAME = MovsChallenge
+VALIDATE_PRODUCT = YES
+WRAPPER_EXTENSION = app
