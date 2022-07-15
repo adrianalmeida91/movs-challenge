@@ -2,8 +2,8 @@ name: MovsChallenge
 
 options:
   bundleIdPrefix: adrianalmeida
-  deployTarget:
-    iOS: "15.0"
+  deploymentTarget:
+    iOS: "15.2"
 
 configs:
   Debug: debug
@@ -41,6 +41,8 @@ targets:
   MovsChallengeTests:
     type: bundle.unit-test
     platform: iOS
+    configFiles:
+      Debug: Configs/AppTests.xcconfig
     sources: MovsChallengeTests
     dependencies:
       - target: MovsChallenge
@@ -49,10 +51,11 @@ targets:
   MovsChallengeUITests:
     type: bundle.ui-testing
     platform: iOS
+    configFiles:
+      Debug: Configs/AppUITests.xcconfig
     sources: MovsChallengeUITests
     dependencies:
       - target: MovsChallenge
-      - package: SnapshotTesting
 
 schemes:
   MovsChallenge:
@@ -70,7 +73,10 @@ schemes:
     test:
       config: Debug
       gatherCoverageData: true
+      coverageTargets:
+        - MovsChallenge
       targets:
         - name: MovsChallengeTests
+          randomExecutionOrder: true
         - name: MovsChallengeUITests
-
+          randomExecutionOrder: true
